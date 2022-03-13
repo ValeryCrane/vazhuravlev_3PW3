@@ -6,3 +6,5 @@
 
 - StackView is filled with custom made Alarm views and can be scrolled.
 
+- There are custom Table View cells with an eye in a random place (200 cells or more).
+

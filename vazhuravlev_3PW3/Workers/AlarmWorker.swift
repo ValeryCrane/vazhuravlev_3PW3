@@ -9,20 +9,20 @@ import Foundation
 
 // Worker stores and mutate alarm models.
 class AlarmWorker {
-    private var alarms: [AlarmModel] = []
+    private static var alarms: [AlarmModel] = []
     
     func add(alarm: AlarmModel, completion: (([AlarmModel]) -> ())?) {
-        alarms.append(alarm)
-        alarms.sort {$0.getSumOfMinutes() < $1.getSumOfMinutes()}
-        completion?(alarms)
+        AlarmWorker.alarms.append(alarm)
+        AlarmWorker.alarms.sort {$0.getSumOfMinutes() < $1.getSumOfMinutes()}
+        completion?(AlarmWorker.alarms)
     }
     
     func remove(id: UUID, completion: (([AlarmModel]) -> ())?) {
-        alarms = alarms.filter {$0.getId() != id}
-        completion?(alarms)
+        AlarmWorker.alarms = AlarmWorker.alarms.filter {$0.getId() != id}
+        completion?(AlarmWorker.alarms)
     }
     
     func getCurrentAlarms() -> [AlarmModel] {
-        return alarms
+        return AlarmWorker.alarms
     }
 }
