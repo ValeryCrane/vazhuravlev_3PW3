@@ -1,19 +1,16 @@
 //
-//  ViewController.swift
+//  TableViewController.swift
 //  vazhuravlev_3PW3
 //
 //  Created by Валерий Журавлев on 13.03.2022.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .gray
     }
-
-
 }
-
