@@ -8,18 +8,22 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, TableViewDisplayLogic {
     private var table: UITableView?
+    private var currentAlarms: [AlarmModel] = []
+    public var interactor: TableViewBusinessLogic!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
         setupTableView()
+        interactor.fetchAlarms()
+        table?.reloadData()
     }
         
     private func setupTableView() {
         let table = UITableView()
-        table.register(EyeCell.self, forCellReuseIdentifier: "eyeCell")
+        table.register(TableAlarmView.self, forCellReuseIdentifier: TableAlarmView.reuseIdentifier)
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .white
@@ -27,6 +31,12 @@ class TableViewController: UIViewController {
         table.pinTop(to: self.view.safeAreaLayoutGuide.topAnchor)
         table.pinBottom(to: self.view.safeAreaLayoutGuide.bottomAnchor)
         table.pin(to: self.view, .left, .right)
+        self.table = table
+    }
+    
+    func displayUpdatedAlarms(alarms: [AlarmModel]) {
+        self.currentAlarms = alarms
+        self.table?.reloadData()
     }
 }
 
@@ -34,7 +44,7 @@ extension TableViewController: UITableViewDelegate {}
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        300
+        return self.currentAlarms.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,9 +53,12 @@ extension TableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "eyeCell", for: indexPath) as? EyeCell
-        cell?.setupEye()
+            withIdentifier: TableAlarmView.reuseIdentifier, for: indexPath) as? TableAlarmView
+        cell?.loadFrom(alarmModel: self.currentAlarms[indexPath.row])
         return cell ?? UITableViewCell()
     }
-    
+}
+
+protocol TableViewDisplayLogic: AnyObject {
+    func displayUpdatedAlarms(alarms: [AlarmModel]) // Displays alarm data recieved from presenter.
 }

@@ -8,3 +8,5 @@
 
 - There are custom Table View cells with an eye in a random place (200 cells or more).
 
+- The issue with eyes is fixed. TV is filled with Alarm table view cells.
+

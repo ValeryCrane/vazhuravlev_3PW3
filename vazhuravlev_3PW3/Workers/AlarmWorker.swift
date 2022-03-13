@@ -25,4 +25,13 @@ class AlarmWorker {
     func getCurrentAlarms() -> [AlarmModel] {
         return AlarmWorker.alarms
     }
+    
+    func addRandomAlarms(count: Int, completion: (([AlarmModel]) -> ())?) {
+        for _ in 0..<count {
+            var alarm = AlarmModel(hours: Int.random(in: 0..<24), minutes: Int.random(in: 0..<60))
+            alarm.isActive = Bool.random()
+            self.add(alarm: alarm, completion: nil)
+        }
+        completion?(AlarmWorker.alarms)
+    }
 }

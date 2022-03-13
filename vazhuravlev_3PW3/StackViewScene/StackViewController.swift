@@ -18,7 +18,7 @@ class StackViewController: UIViewController, StackViewDisplayLogic {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         setupStackView()
-        interactor.addRandomAlarms(count: 100) // Adding 100 random alarms.
+        interactor.fetchAlarms()
     }
         
     override func viewDidAppear(_ animated: Bool) {

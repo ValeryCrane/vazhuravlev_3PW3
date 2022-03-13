@@ -18,12 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+        
+        // Adding random alarms into model.
+        AlarmWorker().addRandomAlarms(count: 100, completion: nil)
                 
         // Creating tabBarController with view controllers and putting it inside navigationController.
         let tabBarController = UITabBarController()
         
         let viewControllers = [StackViewAssembly().assemble(),
-                               TableViewController(),
+                               TableViewAssembly().assemble(),
                                CollectionViewController()]
         tabBarController.setViewControllers(viewControllers, animated: false)
                 
