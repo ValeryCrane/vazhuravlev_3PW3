@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/zhulery/Desktop/workspace/IOS/Projects/vazhuravlev_3PW3/vazhuravlev_3PW3/ViewControllers/UIView_Pin.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
