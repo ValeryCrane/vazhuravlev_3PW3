@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412327DDE66400BAFFE7 /* StackAlarmView.swift */; };
+		4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */; };
+		4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */; };
+		4896414C27DE0EDE00BAFFE7 /* StackViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */; };
+		4896414F27DE0EF900BAFFE7 /* StackViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */; };
+		4896415227DE20B900BAFFE7 /* StackViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */; };
 		48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E19527DDDBBD009CC733 /* AppDelegate.swift */; };
 		48C4E19827DDDBBD009CC733 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */; };
 		48C4E19F27DDDBBE009CC733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C4E19E27DDDBBE009CC733 /* Assets.xcassets */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4896412327DDE66400BAFFE7 /* StackAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAlarmView.swift; sourceTree = "<group>"; };
+		4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWorker.swift; sourceTree = "<group>"; };
+		4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewInteractor.swift; sourceTree = "<group>"; };
+		4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewPresenter.swift; sourceTree = "<group>"; };
+		4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewAssembly.swift; sourceTree = "<group>"; };
 		48C4E19227DDDBBD009CC733 /* vazhuravlev_3PW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vazhuravlev_3PW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C4E19527DDDBBD009CC733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +54,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4896412627DDE67D00BAFFE7 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		4896414627DE0E4200BAFFE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4896414927DE0E9E00BAFFE7 /* StackViewScene */ = {
+			isa = PBXGroup;
+			children = (
+				4896412327DDE66400BAFFE7 /* StackAlarmView.swift */,
+				48C4E1AC27DDDCEF009CC733 /* StackViewController.swift */,
+				4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */,
+				4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */,
+				4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */,
+			);
+			path = StackViewScene;
+			sourceTree = "<group>";
+		};
 		48C4E18927DDDBBD009CC733 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +105,9 @@
 				48C4E1B927DDDF3C009CC733 /* UIView_Pin.swift */,
 				48C4E19527DDDBBD009CC733 /* AppDelegate.swift */,
 				48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */,
+				4896414627DE0E4200BAFFE7 /* Models */,
+				4896412627DDE67D00BAFFE7 /* Workers */,
+				4896414927DE0E9E00BAFFE7 /* StackViewScene */,
 				48C4E1B527DDDE01009CC733 /* ViewControllers */,
 				48C4E19E27DDDBBE009CC733 /* Assets.xcassets */,
 				48C4E1A027DDDBBE009CC733 /* LaunchScreen.storyboard */,
@@ -76,7 +119,6 @@
 		48C4E1B527DDDE01009CC733 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				48C4E1AC27DDDCEF009CC733 /* StackViewController.swift */,
 				48C4E1AF27DDDCF8009CC733 /* TableViewController.swift */,
 				48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */,
 			);
@@ -155,8 +197,14 @@
 				48C4E1BA27DDDF3C009CC733 /* UIView_Pin.swift in Sources */,
 				48C4E1AD27DDDCEF009CC733 /* StackViewController.swift in Sources */,
 				48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */,
+				4896415227DE20B900BAFFE7 /* StackViewAssembly.swift in Sources */,
 				48C4E19827DDDBBD009CC733 /* SceneDelegate.swift in Sources */,
+				4896414C27DE0EDE00BAFFE7 /* StackViewInteractor.swift in Sources */,
+				4896414F27DE0EF900BAFFE7 /* StackViewPresenter.swift in Sources */,
 				48C4E1B027DDDCF8009CC733 /* TableViewController.swift in Sources */,
+				4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */,
+				4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */,
+				4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */,
 				48C4E1B327DDDD09009CC733 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

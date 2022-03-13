@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
         // Creating tabBarController with view controllers and putting it inside navigationController.
         let tabBarController = UITabBarController()
-        let viewControllers = [StackViewController(),
+        
+        let viewControllers = [StackViewAssembly().assemble(),
                                TableViewController(),
                                CollectionViewController()]
         tabBarController.setViewControllers(viewControllers, animated: false)

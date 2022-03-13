@@ -4,3 +4,5 @@
 
 - First screen has a StackView, second has TableView, third has a CollectionView.
 
+- StackView is filled with custom made Alarm views and can be scrolled.
+

@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class StackViewController: UIViewController {
+class StackViewController: UIViewController, StackViewDisplayLogic {
+    public var interactor: StackViewBusinessLogic!
+    
     private var scroll: UIScrollView?
     private var stack: UIStackView?
         
@@ -16,6 +18,7 @@ class StackViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         setupStackView()
+        interactor.addRandomAlarms(count: 100) // Adding 100 random alarms.
     }
         
     override func viewDidAppear(_ animated: Bool) {
@@ -40,9 +43,27 @@ class StackViewController: UIViewController {
         let stack = UIStackView()
         stack.axis = .vertical
         scroll.addSubview(stack)
-        stack.pin(to: scroll, .top, .left, .right, .bottom)
+        stack.pinTop(to: scroll.contentLayoutGuide.topAnchor)
+        stack.pinLeft(to: scroll.contentLayoutGuide.leadingAnchor)
+        stack.pinWidth(to: scroll.widthAnchor)
         
         self.scroll = scroll
         self.stack = stack
     }
+    
+    func displayUpdatedAlarms(alarms: [AlarmModel]) {
+        if let subviews = stack?.arrangedSubviews {
+            for view in subviews {
+                view.removeFromSuperview()
+            }
+        }
+        for alarm in alarms {
+            stack?.addArrangedSubview(StackAlarmView(alarmModel: alarm))
+        }
+    }
+}
+
+
+protocol StackViewDisplayLogic: AnyObject {
+    func displayUpdatedAlarms(alarms: [AlarmModel]) // Displays alarm data recieved from presenter.
 }
