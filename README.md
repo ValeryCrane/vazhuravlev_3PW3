@@ -10,3 +10,4 @@
 
 - The issue with eyes is fixed. TV is filled with Alarm table view cells.
 
+- CollectionView is filled with alarms, that can be scrolled horizontally.

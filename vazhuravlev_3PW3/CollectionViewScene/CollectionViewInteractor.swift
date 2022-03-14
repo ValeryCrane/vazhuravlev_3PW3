@@ -1,5 +1,5 @@
 //
-//  TableViewInteractor.swift
+//  CollectionViewInteractor.swift
 //  vazhuravlev_3PW3
 //
 //  Created by Валерий Журавлев on 14.03.2022.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-class TableViewInteractor: TableViewBusinessLogic {
+class CollectionViewInteractor: CollectionViewBusinessLogic {
     private let alarmWorker = AlarmWorker()
-    public var presenter: TableViewPresentationLogic!
+    public var presenter: CollectionViewPresentationLogic!
     
     func fetchAlarms() {
         self.presenter.presentUpdatedAlarms(alarms: self.alarmWorker.getCurrentAlarms())
@@ -20,7 +20,7 @@ class TableViewInteractor: TableViewBusinessLogic {
     }
 }
 
-protocol TableViewBusinessLogic: AnyObject {
+protocol CollectionViewBusinessLogic: AnyObject {
     func fetchAlarms()                                      // Fetches alarms from worker and passes it to presenter.
     func changeActivityIndicatorAt(id: UUID, with: Bool)    // Changes activity indicator of certain alarm.
 }

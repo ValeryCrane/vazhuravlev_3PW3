@@ -14,8 +14,13 @@ class StackViewInteractor: StackViewBusinessLogic {
     func fetchAlarms() {
         self.presenter.presentUpdatedAlarms(alarms: self.alarmWorker.getCurrentAlarms())
     }
+    
+    func changeActivityIndicatorAt(id: UUID, with activity: Bool) {
+        alarmWorker.change(id: id, activity: activity)
+    }
 }
 
 protocol StackViewBusinessLogic: AnyObject {
-    func fetchAlarms() // Fetches alarms from worker and passes it to presenter.
+    func fetchAlarms()                                      // Fetches alarms from worker and passes it to presenter.
+    func changeActivityIndicatorAt(id: UUID, with: Bool)    // Changes activity indicator of certain alarm.
 }

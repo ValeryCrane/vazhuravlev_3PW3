@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class StackViewController: UIViewController, StackViewDisplayLogic {
+class StackViewController: UIViewController, StackViewDisplayLogic, StackAlarmViewDelegate {
     public var interactor: StackViewBusinessLogic!
     
     private var scroll: UIScrollView?
@@ -16,8 +16,13 @@ class StackViewController: UIViewController, StackViewDisplayLogic {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        self.view.backgroundColor = .white
         setupStackView()
+    }
+    
+    // When view apperars we update alarms.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor.fetchAlarms()
     }
         
@@ -58,8 +63,14 @@ class StackViewController: UIViewController, StackViewDisplayLogic {
             }
         }
         for alarm in alarms {
-            stack?.addArrangedSubview(StackAlarmView(alarmModel: alarm))
+            let alarmView = StackAlarmView(alarmModel: alarm)
+            alarmView.delegate = self
+            stack?.addArrangedSubview(alarmView)
         }
+    }
+    
+    func processSwitchActionFrom(id: UUID, with activity: Bool) {
+        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
     }
 }
 

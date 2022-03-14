@@ -8,17 +8,21 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController, TableViewDisplayLogic {
+class TableViewController: UIViewController, TableViewDisplayLogic, TableAlarmViewDelegate {
     private var table: UITableView?
     private var currentAlarms: [AlarmModel] = []
     public var interactor: TableViewBusinessLogic!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        self.view.backgroundColor = .white
         setupTableView()
+    }
+    
+    // When view apperars we update alarms.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor.fetchAlarms()
-        table?.reloadData()
     }
         
     private func setupTableView() {
@@ -38,6 +42,10 @@ class TableViewController: UIViewController, TableViewDisplayLogic {
         self.currentAlarms = alarms
         self.table?.reloadData()
     }
+    
+    func processSwitchActionFrom(id: UUID, with activity: Bool) {
+        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
+    }
 }
 
 extension TableViewController: UITableViewDelegate {}
@@ -55,6 +63,7 @@ extension TableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: TableAlarmView.reuseIdentifier, for: indexPath) as? TableAlarmView
         cell?.loadFrom(alarmModel: self.currentAlarms[indexPath.row])
+        cell?.delegate = self
         return cell ?? UITableViewCell()
     }
 }

@@ -22,6 +22,14 @@ class AlarmWorker {
         completion?(AlarmWorker.alarms)
     }
     
+    func change(id: UUID, activity: Bool) {
+        for i in 0..<AlarmWorker.alarms.count {
+            if AlarmWorker.alarms[i].getId() == id {
+                AlarmWorker.alarms[i].isActive = activity
+            }
+        }
+    }
+    
     func getCurrentAlarms() -> [AlarmModel] {
         return AlarmWorker.alarms
     }

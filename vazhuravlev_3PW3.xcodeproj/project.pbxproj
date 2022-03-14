@@ -11,6 +11,10 @@
 		48740A5C27DE97EE00EF2BC3 /* TableViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5B27DE97EE00EF2BC3 /* TableViewInteractor.swift */; };
 		48740A5F27DE97FB00EF2BC3 /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5E27DE97FB00EF2BC3 /* TableViewPresenter.swift */; };
 		48740A6227DE981700EF2BC3 /* TableViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6127DE981700EF2BC3 /* TableViewAssembly.swift */; };
+		48740A6727DEA88D00EF2BC3 /* CollectionAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */; };
+		48740A6B27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */; };
+		48740A6E27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */; };
+		48740A7127DEB6FA00EF2BC3 /* CollectionViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */; };
 		4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412327DDE66400BAFFE7 /* StackAlarmView.swift */; };
 		4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */; };
 		4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */; };
@@ -32,6 +36,10 @@
 		48740A5B27DE97EE00EF2BC3 /* TableViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInteractor.swift; sourceTree = "<group>"; };
 		48740A5E27DE97FB00EF2BC3 /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
 		48740A6127DE981700EF2BC3 /* TableViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAssembly.swift; sourceTree = "<group>"; };
+		48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAlarmView.swift; sourceTree = "<group>"; };
+		48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInteractor.swift; sourceTree = "<group>"; };
+		48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPresenter.swift; sourceTree = "<group>"; };
+		48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAssembly.swift; sourceTree = "<group>"; };
 		4896412327DDE66400BAFFE7 /* StackAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAlarmView.swift; sourceTree = "<group>"; };
 		4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWorker.swift; sourceTree = "<group>"; };
 		4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
@@ -62,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48740A6927DEB6A700EF2BC3 /* CollectionViewScene */ = {
+			isa = PBXGroup;
+			children = (
+				48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */,
+				48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */,
+				48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */,
+				48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */,
+				48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */,
+			);
+			path = CollectionViewScene;
+			sourceTree = "<group>";
+		};
 		4896412627DDE67D00BAFFE7 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,20 +149,12 @@
 				4896412627DDE67D00BAFFE7 /* Workers */,
 				4896414927DE0E9E00BAFFE7 /* StackViewScene */,
 				4896415427DE2C6300BAFFE7 /* TableViewScene */,
-				48C4E1B527DDDE01009CC733 /* ViewControllers */,
+				48740A6927DEB6A700EF2BC3 /* CollectionViewScene */,
 				48C4E19E27DDDBBE009CC733 /* Assets.xcassets */,
 				48C4E1A027DDDBBE009CC733 /* LaunchScreen.storyboard */,
 				48C4E1A327DDDBBE009CC733 /* Info.plist */,
 			);
 			path = vazhuravlev_3PW3;
-			sourceTree = "<group>";
-		};
-		48C4E1B527DDDE01009CC733 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +228,7 @@
 			files = (
 				48C4E1BA27DDDF3C009CC733 /* UIView_Pin.swift in Sources */,
 				48740A5927DE8CC400EF2BC3 /* TableAlarmView.swift in Sources */,
+				48740A7127DEB6FA00EF2BC3 /* CollectionViewAssembly.swift in Sources */,
 				48740A6227DE981700EF2BC3 /* TableViewAssembly.swift in Sources */,
 				48C4E1AD27DDDCEF009CC733 /* StackViewController.swift in Sources */,
 				48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */,
@@ -225,9 +238,12 @@
 				4896414F27DE0EF900BAFFE7 /* StackViewPresenter.swift in Sources */,
 				48C4E1B027DDDCF8009CC733 /* TableViewController.swift in Sources */,
 				4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */,
+				48740A6727DEA88D00EF2BC3 /* CollectionAlarmView.swift in Sources */,
 				48740A5C27DE97EE00EF2BC3 /* TableViewInteractor.swift in Sources */,
 				4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */,
 				4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */,
+				48740A6E27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift in Sources */,
+				48740A6B27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift in Sources */,
 				48740A5F27DE97FB00EF2BC3 /* TableViewPresenter.swift in Sources */,
 				48C4E1B327DDDD09009CC733 /* CollectionViewController.swift in Sources */,
 			);

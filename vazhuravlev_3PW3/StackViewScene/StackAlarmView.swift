@@ -10,7 +10,10 @@ import UIKit
 
 // Custom alarm view for UIStackView. Consists of time label and switch.
 class StackAlarmView: UIView {
+    public weak var delegate: StackAlarmViewDelegate?
     private let id: UUID
+    private var timeLabel: UILabel?
+    private var onSwitch: UISwitch?
     
     init(alarmModel: AlarmModel) {
         id = alarmModel.getId()
@@ -23,12 +26,15 @@ class StackAlarmView: UIView {
         timeLabel.pinTop(to: self.topAnchor, 20)
         timeLabel.pinLeft(to: self.leadingAnchor, 20)
         timeLabel.pinBottom(to: self.bottomAnchor, 20)
+        self.timeLabel = timeLabel
         
         let onSwitch = UISwitch()
         onSwitch.isOn = alarmModel.isActive
         self.addSubview(onSwitch)
         onSwitch.pinTop(to: self.topAnchor, 20)
         onSwitch.pinRight(to: self.trailingAnchor, 20)
+        onSwitch.addTarget(self, action: #selector(self.sendSwitchAction), for: .valueChanged)
+        self.onSwitch = onSwitch
     }
     
     // Converts numbered time to string
@@ -42,7 +48,19 @@ class StackAlarmView: UIView {
         return id
     }
     
+    // Notifying delegate about uiswitch value changed.
+    @objc func sendSwitchAction() {
+        if let isOn = onSwitch?.isOn {
+            self.delegate?.processSwitchActionFrom(id: self.id, with: isOn)
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+
+protocol StackAlarmViewDelegate: AnyObject {
+    func processSwitchActionFrom(id: UUID, with: Bool)
 }
