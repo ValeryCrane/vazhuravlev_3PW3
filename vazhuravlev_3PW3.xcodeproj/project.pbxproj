@@ -7,20 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48268ECD27DF3D1500D2158A /* CreateAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268ECC27DF3D1500D2158A /* CreateAlarmViewController.swift */; };
+		48268ED027DF3D2900D2158A /* CreateAlarmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268ECF27DF3D2900D2158A /* CreateAlarmInteractor.swift */; };
+		48268EDB27DF3D7D00D2158A /* CreateAlarmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EDA27DF3D7D00D2158A /* CreateAlarmRouter.swift */; };
+		48268EDE27DF3D8800D2158A /* CreateAlarmAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EDD27DF3D8800D2158A /* CreateAlarmAssembly.swift */; };
+		48268EE327DF579400D2158A /* AlarmTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EE227DF579400D2158A /* AlarmTabBarViewController.swift */; };
+		48268EEB27DF593A00D2158A /* AlarmTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EEA27DF593A00D2158A /* AlarmTabBarRouter.swift */; };
+		48268EEE27DF59E600D2158A /* AlarmTabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EED27DF59E600D2158A /* AlarmTabBarAssembly.swift */; };
+		48268EF327DF6B3700D2158A /* EditAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EF227DF6B3700D2158A /* EditAlarmViewController.swift */; };
+		48268EF627DF6B5200D2158A /* EditAlarmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EF527DF6B5200D2158A /* EditAlarmInteractor.swift */; };
+		48268EF927DF6B6400D2158A /* EditAlarmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EF827DF6B6400D2158A /* EditAlarmRouter.swift */; };
+		48268EFC27DF6B6F00D2158A /* EditAlarmAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EFB27DF6B6F00D2158A /* EditAlarmAssembly.swift */; };
+		48268EFF27DF901600D2158A /* EditAlarmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268EFE27DF901600D2158A /* EditAlarmPresenter.swift */; };
+		48268F0327DF934000D2158A /* TableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F0227DF934000D2158A /* TableRouter.swift */; };
+		48268F1027DFA76E00D2158A /* TextAlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */; };
+		48268F1427DFAD1100D2158A /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F1327DFAD1100D2158A /* StackRouter.swift */; };
 		48740A5927DE8CC400EF2BC3 /* TableAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5827DE8CC400EF2BC3 /* TableAlarmView.swift */; };
-		48740A5C27DE97EE00EF2BC3 /* TableViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5B27DE97EE00EF2BC3 /* TableViewInteractor.swift */; };
-		48740A5F27DE97FB00EF2BC3 /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5E27DE97FB00EF2BC3 /* TableViewPresenter.swift */; };
-		48740A6227DE981700EF2BC3 /* TableViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6127DE981700EF2BC3 /* TableViewAssembly.swift */; };
+		48740A5C27DE97EE00EF2BC3 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5B27DE97EE00EF2BC3 /* TableInteractor.swift */; };
+		48740A5F27DE97FB00EF2BC3 /* TablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5E27DE97FB00EF2BC3 /* TablePresenter.swift */; };
+		48740A6227DE981700EF2BC3 /* TableAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6127DE981700EF2BC3 /* TableAssembly.swift */; };
 		48740A6727DEA88D00EF2BC3 /* CollectionAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */; };
-		48740A6B27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */; };
-		48740A6E27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */; };
-		48740A7127DEB6FA00EF2BC3 /* CollectionViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */; };
+		48740A6B27DEB6CE00EF2BC3 /* CollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6A27DEB6CE00EF2BC3 /* CollectionInteractor.swift */; };
+		48740A6E27DEB6DB00EF2BC3 /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A6D27DEB6DB00EF2BC3 /* CollectionPresenter.swift */; };
+		48740A7127DEB6FA00EF2BC3 /* CollectionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A7027DEB6FA00EF2BC3 /* CollectionAssembly.swift */; };
 		4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412327DDE66400BAFFE7 /* StackAlarmView.swift */; };
 		4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */; };
 		4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */; };
-		4896414C27DE0EDE00BAFFE7 /* StackViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */; };
-		4896414F27DE0EF900BAFFE7 /* StackViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */; };
-		4896415227DE20B900BAFFE7 /* StackViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */; };
+		4896414C27DE0EDE00BAFFE7 /* StackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414B27DE0EDE00BAFFE7 /* StackInteractor.swift */; };
+		4896414F27DE0EF900BAFFE7 /* StackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896414E27DE0EF900BAFFE7 /* StackPresenter.swift */; };
+		4896415227DE20B900BAFFE7 /* StackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896415127DE20B900BAFFE7 /* StackAssembly.swift */; };
 		48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E19527DDDBBD009CC733 /* AppDelegate.swift */; };
 		48C4E19827DDDBBD009CC733 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */; };
 		48C4E19F27DDDBBE009CC733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C4E19E27DDDBBE009CC733 /* Assets.xcassets */; };
@@ -29,23 +44,39 @@
 		48C4E1B027DDDCF8009CC733 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E1AF27DDDCF8009CC733 /* TableViewController.swift */; };
 		48C4E1B327DDDD09009CC733 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */; };
 		48C4E1BA27DDDF3C009CC733 /* UIView_Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4E1B927DDDF3C009CC733 /* UIView_Pin.swift */; };
+		48FAF29727DFCF4A005D4938 /* CollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FAF29627DFCF4A005D4938 /* CollectionRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48268ECC27DF3D1500D2158A /* CreateAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmViewController.swift; sourceTree = "<group>"; };
+		48268ECF27DF3D2900D2158A /* CreateAlarmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmInteractor.swift; sourceTree = "<group>"; };
+		48268EDA27DF3D7D00D2158A /* CreateAlarmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmRouter.swift; sourceTree = "<group>"; };
+		48268EDD27DF3D8800D2158A /* CreateAlarmAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmAssembly.swift; sourceTree = "<group>"; };
+		48268EE227DF579400D2158A /* AlarmTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTabBarViewController.swift; sourceTree = "<group>"; };
+		48268EEA27DF593A00D2158A /* AlarmTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTabBarRouter.swift; sourceTree = "<group>"; };
+		48268EED27DF59E600D2158A /* AlarmTabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTabBarAssembly.swift; sourceTree = "<group>"; };
+		48268EF227DF6B3700D2158A /* EditAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmViewController.swift; sourceTree = "<group>"; };
+		48268EF527DF6B5200D2158A /* EditAlarmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmInteractor.swift; sourceTree = "<group>"; };
+		48268EF827DF6B6400D2158A /* EditAlarmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmRouter.swift; sourceTree = "<group>"; };
+		48268EFB27DF6B6F00D2158A /* EditAlarmAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmAssembly.swift; sourceTree = "<group>"; };
+		48268EFE27DF901600D2158A /* EditAlarmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmPresenter.swift; sourceTree = "<group>"; };
+		48268F0227DF934000D2158A /* TableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouter.swift; sourceTree = "<group>"; };
+		48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlarmModel.swift; sourceTree = "<group>"; };
+		48268F1327DFAD1100D2158A /* StackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
 		48740A5827DE8CC400EF2BC3 /* TableAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAlarmView.swift; sourceTree = "<group>"; };
-		48740A5B27DE97EE00EF2BC3 /* TableViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInteractor.swift; sourceTree = "<group>"; };
-		48740A5E27DE97FB00EF2BC3 /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
-		48740A6127DE981700EF2BC3 /* TableViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAssembly.swift; sourceTree = "<group>"; };
+		48740A5B27DE97EE00EF2BC3 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
+		48740A5E27DE97FB00EF2BC3 /* TablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenter.swift; sourceTree = "<group>"; };
+		48740A6127DE981700EF2BC3 /* TableAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAssembly.swift; sourceTree = "<group>"; };
 		48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAlarmView.swift; sourceTree = "<group>"; };
-		48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInteractor.swift; sourceTree = "<group>"; };
-		48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPresenter.swift; sourceTree = "<group>"; };
-		48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAssembly.swift; sourceTree = "<group>"; };
+		48740A6A27DEB6CE00EF2BC3 /* CollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractor.swift; sourceTree = "<group>"; };
+		48740A6D27DEB6DB00EF2BC3 /* CollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresenter.swift; sourceTree = "<group>"; };
+		48740A7027DEB6FA00EF2BC3 /* CollectionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAssembly.swift; sourceTree = "<group>"; };
 		4896412327DDE66400BAFFE7 /* StackAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAlarmView.swift; sourceTree = "<group>"; };
 		4896412727DDE68B00BAFFE7 /* AlarmWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWorker.swift; sourceTree = "<group>"; };
 		4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
-		4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewInteractor.swift; sourceTree = "<group>"; };
-		4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewPresenter.swift; sourceTree = "<group>"; };
-		4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewAssembly.swift; sourceTree = "<group>"; };
+		4896414B27DE0EDE00BAFFE7 /* StackInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackInteractor.swift; sourceTree = "<group>"; };
+		4896414E27DE0EF900BAFFE7 /* StackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackPresenter.swift; sourceTree = "<group>"; };
+		4896415127DE20B900BAFFE7 /* StackAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAssembly.swift; sourceTree = "<group>"; };
 		48C4E19227DDDBBD009CC733 /* vazhuravlev_3PW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vazhuravlev_3PW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C4E19527DDDBBD009CC733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +88,7 @@
 		48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		48C4E1B727DDDE32009CC733 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		48C4E1B927DDDF3C009CC733 /* UIView_Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Pin.swift; sourceTree = "<group>"; };
+		48FAF29627DFCF4A005D4938 /* CollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +102,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48268ECB27DF3CEF00D2158A /* CreateAlarmScene */ = {
+			isa = PBXGroup;
+			children = (
+				48268ECC27DF3D1500D2158A /* CreateAlarmViewController.swift */,
+				48268ECF27DF3D2900D2158A /* CreateAlarmInteractor.swift */,
+				48268EDA27DF3D7D00D2158A /* CreateAlarmRouter.swift */,
+				48268EDD27DF3D8800D2158A /* CreateAlarmAssembly.swift */,
+			);
+			path = CreateAlarmScene;
+			sourceTree = "<group>";
+		};
+		48268EE127DF577B00D2158A /* TabBarScene */ = {
+			isa = PBXGroup;
+			children = (
+				48268EE227DF579400D2158A /* AlarmTabBarViewController.swift */,
+				48268EEA27DF593A00D2158A /* AlarmTabBarRouter.swift */,
+				48268EED27DF59E600D2158A /* AlarmTabBarAssembly.swift */,
+			);
+			path = TabBarScene;
+			sourceTree = "<group>";
+		};
+		48268EF127DF6B1400D2158A /* EditAlarmScene */ = {
+			isa = PBXGroup;
+			children = (
+				48268EF227DF6B3700D2158A /* EditAlarmViewController.swift */,
+				48268EF527DF6B5200D2158A /* EditAlarmInteractor.swift */,
+				48268EFE27DF901600D2158A /* EditAlarmPresenter.swift */,
+				48268EF827DF6B6400D2158A /* EditAlarmRouter.swift */,
+				48268EFB27DF6B6F00D2158A /* EditAlarmAssembly.swift */,
+			);
+			path = EditAlarmScene;
+			sourceTree = "<group>";
+		};
 		48740A6927DEB6A700EF2BC3 /* CollectionViewScene */ = {
 			isa = PBXGroup;
 			children = (
 				48740A6627DEA88D00EF2BC3 /* CollectionAlarmView.swift */,
 				48C4E1B227DDDD09009CC733 /* CollectionViewController.swift */,
-				48740A6A27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift */,
-				48740A6D27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift */,
-				48740A7027DEB6FA00EF2BC3 /* CollectionViewAssembly.swift */,
+				48740A6A27DEB6CE00EF2BC3 /* CollectionInteractor.swift */,
+				48740A6D27DEB6DB00EF2BC3 /* CollectionPresenter.swift */,
+				48FAF29627DFCF4A005D4938 /* CollectionRouter.swift */,
+				48740A7027DEB6FA00EF2BC3 /* CollectionAssembly.swift */,
 			);
 			path = CollectionViewScene;
 			sourceTree = "<group>";
@@ -94,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */,
+				48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,9 +170,10 @@
 			children = (
 				4896412327DDE66400BAFFE7 /* StackAlarmView.swift */,
 				48C4E1AC27DDDCEF009CC733 /* StackViewController.swift */,
-				4896414B27DE0EDE00BAFFE7 /* StackViewInteractor.swift */,
-				4896414E27DE0EF900BAFFE7 /* StackViewPresenter.swift */,
-				4896415127DE20B900BAFFE7 /* StackViewAssembly.swift */,
+				4896414B27DE0EDE00BAFFE7 /* StackInteractor.swift */,
+				4896414E27DE0EF900BAFFE7 /* StackPresenter.swift */,
+				48268F1327DFAD1100D2158A /* StackRouter.swift */,
+				4896415127DE20B900BAFFE7 /* StackAssembly.swift */,
 			);
 			path = StackViewScene;
 			sourceTree = "<group>";
@@ -115,9 +183,10 @@
 			children = (
 				48740A5827DE8CC400EF2BC3 /* TableAlarmView.swift */,
 				48C4E1AF27DDDCF8009CC733 /* TableViewController.swift */,
-				48740A5B27DE97EE00EF2BC3 /* TableViewInteractor.swift */,
-				48740A5E27DE97FB00EF2BC3 /* TableViewPresenter.swift */,
-				48740A6127DE981700EF2BC3 /* TableViewAssembly.swift */,
+				48740A5B27DE97EE00EF2BC3 /* TableInteractor.swift */,
+				48740A5E27DE97FB00EF2BC3 /* TablePresenter.swift */,
+				48268F0227DF934000D2158A /* TableRouter.swift */,
+				48740A6127DE981700EF2BC3 /* TableAssembly.swift */,
 			);
 			path = TableViewScene;
 			sourceTree = "<group>";
@@ -147,9 +216,12 @@
 				48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */,
 				4896414627DE0E4200BAFFE7 /* Models */,
 				4896412627DDE67D00BAFFE7 /* Workers */,
+				48268EE127DF577B00D2158A /* TabBarScene */,
 				4896414927DE0E9E00BAFFE7 /* StackViewScene */,
 				4896415427DE2C6300BAFFE7 /* TableViewScene */,
 				48740A6927DEB6A700EF2BC3 /* CollectionViewScene */,
+				48268ECB27DF3CEF00D2158A /* CreateAlarmScene */,
+				48268EF127DF6B1400D2158A /* EditAlarmScene */,
 				48C4E19E27DDDBBE009CC733 /* Assets.xcassets */,
 				48C4E1A027DDDBBE009CC733 /* LaunchScreen.storyboard */,
 				48C4E1A327DDDBBE009CC733 /* Info.plist */,
@@ -227,24 +299,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C4E1BA27DDDF3C009CC733 /* UIView_Pin.swift in Sources */,
+				48268EF327DF6B3700D2158A /* EditAlarmViewController.swift in Sources */,
 				48740A5927DE8CC400EF2BC3 /* TableAlarmView.swift in Sources */,
-				48740A7127DEB6FA00EF2BC3 /* CollectionViewAssembly.swift in Sources */,
-				48740A6227DE981700EF2BC3 /* TableViewAssembly.swift in Sources */,
+				48740A7127DEB6FA00EF2BC3 /* CollectionAssembly.swift in Sources */,
+				48740A6227DE981700EF2BC3 /* TableAssembly.swift in Sources */,
+				48268EFC27DF6B6F00D2158A /* EditAlarmAssembly.swift in Sources */,
+				48268EDB27DF3D7D00D2158A /* CreateAlarmRouter.swift in Sources */,
 				48C4E1AD27DDDCEF009CC733 /* StackViewController.swift in Sources */,
 				48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */,
-				4896415227DE20B900BAFFE7 /* StackViewAssembly.swift in Sources */,
+				48268EFF27DF901600D2158A /* EditAlarmPresenter.swift in Sources */,
+				4896415227DE20B900BAFFE7 /* StackAssembly.swift in Sources */,
+				48268F0327DF934000D2158A /* TableRouter.swift in Sources */,
 				48C4E19827DDDBBD009CC733 /* SceneDelegate.swift in Sources */,
-				4896414C27DE0EDE00BAFFE7 /* StackViewInteractor.swift in Sources */,
-				4896414F27DE0EF900BAFFE7 /* StackViewPresenter.swift in Sources */,
+				4896414C27DE0EDE00BAFFE7 /* StackInteractor.swift in Sources */,
+				48268ECD27DF3D1500D2158A /* CreateAlarmViewController.swift in Sources */,
+				4896414F27DE0EF900BAFFE7 /* StackPresenter.swift in Sources */,
+				48268ED027DF3D2900D2158A /* CreateAlarmInteractor.swift in Sources */,
+				48268EEE27DF59E600D2158A /* AlarmTabBarAssembly.swift in Sources */,
+				48268EE327DF579400D2158A /* AlarmTabBarViewController.swift in Sources */,
 				48C4E1B027DDDCF8009CC733 /* TableViewController.swift in Sources */,
+				48268F1427DFAD1100D2158A /* StackRouter.swift in Sources */,
 				4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */,
+				48FAF29727DFCF4A005D4938 /* CollectionRouter.swift in Sources */,
 				48740A6727DEA88D00EF2BC3 /* CollectionAlarmView.swift in Sources */,
-				48740A5C27DE97EE00EF2BC3 /* TableViewInteractor.swift in Sources */,
+				48268F1027DFA76E00D2158A /* TextAlarmModel.swift in Sources */,
+				48740A5C27DE97EE00EF2BC3 /* TableInteractor.swift in Sources */,
 				4896412827DDE68B00BAFFE7 /* AlarmWorker.swift in Sources */,
 				4896412427DDE66400BAFFE7 /* StackAlarmView.swift in Sources */,
-				48740A6E27DEB6DB00EF2BC3 /* CollectionViewPresenter.swift in Sources */,
-				48740A6B27DEB6CE00EF2BC3 /* CollectionViewInteractor.swift in Sources */,
-				48740A5F27DE97FB00EF2BC3 /* TableViewPresenter.swift in Sources */,
+				48268EF927DF6B6400D2158A /* EditAlarmRouter.swift in Sources */,
+				48740A6E27DEB6DB00EF2BC3 /* CollectionPresenter.swift in Sources */,
+				48740A6B27DEB6CE00EF2BC3 /* CollectionInteractor.swift in Sources */,
+				48268EEB27DF593A00D2158A /* AlarmTabBarRouter.swift in Sources */,
+				48268EDE27DF3D8800D2158A /* CreateAlarmAssembly.swift in Sources */,
+				48740A5F27DE97FB00EF2BC3 /* TablePresenter.swift in Sources */,
+				48268EF627DF6B5200D2158A /* EditAlarmInteractor.swift in Sources */,
 				48C4E1B327DDDD09009CC733 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

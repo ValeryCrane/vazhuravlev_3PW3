@@ -30,8 +30,26 @@ class AlarmWorker {
         }
     }
     
+    func change(id: UUID, hours: Int, minutes: Int) {
+        for i in 0..<AlarmWorker.alarms.count {
+            if AlarmWorker.alarms[i].getId() == id {
+                AlarmWorker.alarms[i].changeTime(hours: hours, minutes: minutes)
+            }
+        }
+        AlarmWorker.alarms.sort {$0.getSumOfMinutes() < $1.getSumOfMinutes()}
+    }
+    
     func getCurrentAlarms() -> [AlarmModel] {
         return AlarmWorker.alarms
+    }
+    
+    func getAlarmById(id: UUID) -> AlarmModel? {
+        for alarm in AlarmWorker.alarms {
+            if alarm.getId() == id {
+                return alarm
+            }
+        }
+        return nil
     }
     
     func addRandomAlarms(count: Int, completion: (([AlarmModel]) -> ())?) {

@@ -16,6 +16,7 @@ class CollectionAlarmView: UICollectionViewCell {
     private let timeLabel: UILabel
     private let onSwitch: UISwitch
     
+    // Setting up the view.
     override init(frame: CGRect) {
         self.timeLabel = UILabel()
         self.onSwitch = UISwitch()
@@ -34,16 +35,10 @@ class CollectionAlarmView: UICollectionViewCell {
     }
     
     // Loads data from alarmModel into view elements.
-    func loadFrom(alarmModel: AlarmModel) {
-        self.id = alarmModel.getId()
-        self.timeLabel.text = presentTime(hours: alarmModel.getHours(), minutes: alarmModel.getMinutes())
-        self.onSwitch.isOn = alarmModel.isActive
-    }
-    
-    // Converts numbered time to string.
-    private func presentTime(hours: Int, minutes: Int) -> String {
-        return (hours < 10 ? "0" + String(hours) : String(hours)) + ":" +
-               (minutes < 10 ? "0" + String(minutes) : String(minutes))
+    func loadFrom(alarm: TextAlarmModel) {
+        self.id = alarm.id
+        self.timeLabel.text = alarm.time
+        self.onSwitch.isOn = alarm.isActive
     }
     
     // Notifying delegate about uiswitch value changed.

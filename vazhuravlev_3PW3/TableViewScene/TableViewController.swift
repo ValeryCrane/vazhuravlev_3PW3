@@ -8,14 +8,20 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController, TableViewDisplayLogic, TableAlarmViewDelegate {
+protocol TableDisplayLogic: AnyObject {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) // Displays alarm data recieved from presenter.
+}
+
+class TableViewController: UIViewController {
+    public var interactor: TableBusinessLogic!
+    public var router: TableRoutingLogic!
+    
     private var table: UITableView?
-    private var currentAlarms: [AlarmModel] = []
-    public var interactor: TableViewBusinessLogic!
+    private var currentAlarms: [TextAlarmModel] = []
         
+    // MARK: - ViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         setupTableView()
     }
     
@@ -25,6 +31,7 @@ class TableViewController: UIViewController, TableViewDisplayLogic, TableAlarmVi
         interactor.fetchAlarms()
     }
         
+    // MARK: - Setup functions
     private func setupTableView() {
         let table = UITableView()
         table.register(TableAlarmView.self, forCellReuseIdentifier: TableAlarmView.reuseIdentifier)
@@ -37,18 +44,16 @@ class TableViewController: UIViewController, TableViewDisplayLogic, TableAlarmVi
         table.pin(to: self.view, .left, .right)
         self.table = table
     }
-    
-    func displayUpdatedAlarms(alarms: [AlarmModel]) {
-        self.currentAlarms = alarms
-        self.table?.reloadData()
-    }
-    
-    func processSwitchActionFrom(id: UUID, with activity: Bool) {
-        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
-    }
 }
 
-extension TableViewController: UITableViewDelegate {}
+
+// MARK: - UITableViewDelegate & DataSource implementation
+extension TableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.routeToEditAlarmScene(alarmId: currentAlarms[indexPath.row].id)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,12 +67,25 @@ extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: TableAlarmView.reuseIdentifier, for: indexPath) as? TableAlarmView
-        cell?.loadFrom(alarmModel: self.currentAlarms[indexPath.row])
+        cell?.loadFrom(alarm: self.currentAlarms[indexPath.row])
         cell?.delegate = self
         return cell ?? UITableViewCell()
     }
 }
 
-protocol TableViewDisplayLogic: AnyObject {
-    func displayUpdatedAlarms(alarms: [AlarmModel]) // Displays alarm data recieved from presenter.
+
+// MARK: - TableDisplayLogic implementation
+extension TableViewController: TableDisplayLogic {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) {
+        self.currentAlarms = alarms
+        self.table?.reloadData()
+    }
+}
+
+
+// MARK: - TableAlarmViewDelegate implementation
+extension TableViewController: TableAlarmViewDelegate {
+    func processSwitchActionFrom(id: UUID, with activity: Bool) {
+        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
+    }
 }

@@ -8,15 +8,20 @@
 import Foundation
 import UIKit
 
-class StackViewController: UIViewController, StackViewDisplayLogic, StackAlarmViewDelegate {
-    public var interactor: StackViewBusinessLogic!
+protocol StackDisplayLogic: AnyObject {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) // Displays alarm data recieved from presenter.
+}
+
+class StackViewController: UIViewController {
+    public var interactor: StackBusinessLogic!
+    public var router: StackRoutingLogic!
     
     private var scroll: UIScrollView?
     private var stack: UIStackView?
-        
+    
+    // MARK: - ViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         setupStackView()
     }
     
@@ -25,16 +30,17 @@ class StackViewController: UIViewController, StackViewDisplayLogic, StackAlarmVi
         super.viewWillAppear(animated)
         interactor.fetchAlarms()
     }
-        
+    
+    // Adjusting scroll view content size.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Adjusting scroll view content size.
         if let scroll = self.scroll,
             let stack = self.stack {
             scroll.contentSize = CGSize(width: scroll.frame.width, height: stack.frame.height)
         }
     }
         
+    // MARK: - Setup functions
     // Function creates scroll view and puts stack view in it.
     private func setupStackView() {
         let scroll = UIScrollView()
@@ -55,26 +61,34 @@ class StackViewController: UIViewController, StackViewDisplayLogic, StackAlarmVi
         self.scroll = scroll
         self.stack = stack
     }
-    
-    func displayUpdatedAlarms(alarms: [AlarmModel]) {
-        if let subviews = stack?.arrangedSubviews {
+
+}
+
+// MARK: - StackDisplayLogic implementation
+extension StackViewController: StackDisplayLogic {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) {
+        if let subviews = self.stack?.arrangedSubviews {
             for view in subviews {
                 view.removeFromSuperview()
             }
         }
         for alarm in alarms {
-            let alarmView = StackAlarmView(alarmModel: alarm)
+            let alarmView = StackAlarmView(alarm: alarm)
             alarmView.delegate = self
-            stack?.addArrangedSubview(alarmView)
+            self.stack?.addArrangedSubview(alarmView)
         }
     }
-    
+}
+
+
+// MARK: - StackAlarmViewDelegate implementation
+extension StackViewController: StackAlarmViewDelegate {
     func processSwitchActionFrom(id: UUID, with activity: Bool) {
         self.interactor.changeActivityIndicatorAt(id: id, with: activity)
     }
+    
+    func processTapOnAlarmWith(id: UUID) {
+        self.router.routeToEditAlarmScene(alarmId: id)
+    }
 }
 
-
-protocol StackViewDisplayLogic: AnyObject {
-    func displayUpdatedAlarms(alarms: [AlarmModel]) // Displays alarm data recieved from presenter.
-}

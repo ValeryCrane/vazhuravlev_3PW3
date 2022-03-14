@@ -8,51 +8,56 @@
 import Foundation
 import UIKit
 
+
+protocol StackAlarmViewDelegate: AnyObject {
+    func processSwitchActionFrom(id: UUID, with: Bool) // Processes switch action from certain alarm.
+    func processTapOnAlarmWith(id: UUID)               // Processes tap on alarmView.
+}
+
+
 // Custom alarm view for UIStackView. Consists of time label and switch.
 class StackAlarmView: UIView {
     public weak var delegate: StackAlarmViewDelegate?
-    private let id: UUID
-    private var timeLabel: UILabel?
-    private var onSwitch: UISwitch?
+    private let alarmId: UUID
+    private let timeLabel: UILabel
+    private let onSwitch: UISwitch
     
-    init(alarmModel: AlarmModel) {
-        id = alarmModel.getId()
+    init(alarm: TextAlarmModel) {
+        self.alarmId = alarm.id
+        self.timeLabel = UILabel()
+        self.onSwitch = UISwitch()
         super.init(frame: .zero)
         
-        let timeLabel = UILabel()
-        timeLabel.text = presentTime(hours: alarmModel.getHours(), minutes: alarmModel.getMinutes())
-        timeLabel.font = UIFont.systemFont(ofSize: 32)
+        self.timeLabel.text = alarm.time
+        self.timeLabel.font = UIFont.systemFont(ofSize: 32)
         self.addSubview(timeLabel)
-        timeLabel.pinTop(to: self.topAnchor, 20)
-        timeLabel.pinLeft(to: self.leadingAnchor, 20)
-        timeLabel.pinBottom(to: self.bottomAnchor, 20)
-        self.timeLabel = timeLabel
+        self.timeLabel.pinTop(to: self.topAnchor, 20)
+        self.timeLabel.pinLeft(to: self.leadingAnchor, 20)
+        self.timeLabel.pinBottom(to: self.bottomAnchor, 20)
         
-        let onSwitch = UISwitch()
-        onSwitch.isOn = alarmModel.isActive
+        self.onSwitch.isOn = alarm.isActive
         self.addSubview(onSwitch)
-        onSwitch.pinTop(to: self.topAnchor, 20)
-        onSwitch.pinRight(to: self.trailingAnchor, 20)
-        onSwitch.addTarget(self, action: #selector(self.sendSwitchAction), for: .valueChanged)
-        self.onSwitch = onSwitch
-    }
-    
-    // Converts numbered time to string
-    private func presentTime(hours: Int, minutes: Int) -> String {
-        return (hours < 10 ? "0" + String(hours) : String(hours)) + ":" +
-               (minutes < 10 ? "0" + String(minutes) : String(minutes))
+        self.onSwitch.pinTop(to: self.topAnchor, 20)
+        self.onSwitch.pinRight(to: self.trailingAnchor, 20)
+        self.onSwitch.addTarget(self, action: #selector(self.sendSwitchAction), for: .valueChanged)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.sendTapAction))
+        self.addGestureRecognizer(tapRecognizer)
     }
     
     // Returns Id of given alarm
     func getAlarmId() -> UUID {
-        return id
+        return alarmId
     }
     
-    // Notifying delegate about uiswitch value changed.
-    @objc func sendSwitchAction() {
-        if let isOn = onSwitch?.isOn {
-            self.delegate?.processSwitchActionFrom(id: self.id, with: isOn)
-        }
+    // Notifying delegate about switch value changed.
+    @objc private func sendSwitchAction() {
+        self.delegate?.processSwitchActionFrom(id: self.alarmId, with: onSwitch.isOn)
+    }
+    
+    // Notifying delegate about tap on view.
+    @objc private func sendTapAction() {
+        self.delegate?.processTapOnAlarmWith(id: self.alarmId)
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +65,3 @@ class StackAlarmView: UIView {
     }
 }
 
-
-protocol StackAlarmViewDelegate: AnyObject {
-    func processSwitchActionFrom(id: UUID, with: Bool)
-}

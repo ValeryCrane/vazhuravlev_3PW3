@@ -8,14 +8,19 @@
 import Foundation
 import UIKit
 
-class CollectionViewController: UIViewController, CollectionViewDisplayLogic, CollectionAlarmViewDelegate {
-    public var interactor: CollectionViewBusinessLogic!
+protocol CollectionDisplayLogic: AnyObject {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) // Displays alarm data recieved from presenter.
+}
+
+class CollectionViewController: UIViewController {
+    public var interactor: CollectionBusinessLogic!
+    public var router: CollectionRoutingLogic!
     private var collection: UICollectionView?
-    private var currentAlarms: [AlarmModel] = []
+    private var currentAlarms: [TextAlarmModel] = []
         
+    // MARK: - ViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         setupCollectionView()
     }
     
@@ -25,6 +30,7 @@ class CollectionViewController: UIViewController, CollectionViewDisplayLogic, Co
         interactor.fetchAlarms()
     }
         
+    // MARK: - Setup functions
     private func setupCollectionView() {
         // Configuring layout.
         let layoutFlow = UICollectionViewFlowLayout()
@@ -37,6 +43,7 @@ class CollectionViewController: UIViewController, CollectionViewDisplayLogic, Co
         // Configuring collection view.
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
         collection.isPagingEnabled = true
+        collection.delegate = self
         collection.dataSource = self
         collection.register(CollectionAlarmView.self,
                             forCellWithReuseIdentifier: CollectionAlarmView.reuseIdentifier)
@@ -47,14 +54,14 @@ class CollectionViewController: UIViewController, CollectionViewDisplayLogic, Co
         collection.pin(to: self.view, .left, .right)
         self.collection = collection
     }
-    
-    func displayUpdatedAlarms(alarms: [AlarmModel]) {
-        self.currentAlarms = alarms
-        self.collection?.reloadData()
-    }
-    
-    func processSwitchActionFrom(id: UUID, with activity: Bool) {
-        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
+}
+
+
+// MARK: - UICollectionViewDelegate & DataSource implementation
+extension CollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.router.routeToEditAlarmScene(alarmId: self.currentAlarms[indexPath.row].id)
+        collectionView.deselectItem(at: indexPath, animated: false)
     }
 }
 
@@ -70,13 +77,26 @@ extension CollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CollectionAlarmView.reuseIdentifier, for: indexPath) as? CollectionAlarmView
-        cell?.loadFrom(alarmModel: currentAlarms[indexPath.row])
+        cell?.loadFrom(alarm: currentAlarms[indexPath.row])
         cell?.delegate = self
         return cell ?? UICollectionViewCell()
     }
     
 }
 
-protocol CollectionViewDisplayLogic: AnyObject {
-    func displayUpdatedAlarms(alarms: [AlarmModel])
+
+// MARK: - CollectionDisplayLogic implementation
+extension CollectionViewController: CollectionDisplayLogic {
+    func displayUpdatedAlarms(alarms: [TextAlarmModel]) {
+        self.currentAlarms = alarms
+        self.collection?.reloadData()
+    }
+}
+
+
+// MARK: - CollectionAlarmViewDelegate implementation
+extension CollectionViewController: CollectionAlarmViewDelegate {
+    func processSwitchActionFrom(id: UUID, with activity: Bool) {
+        self.interactor.changeActivityIndicatorAt(id: id, with: activity)
+    }
 }

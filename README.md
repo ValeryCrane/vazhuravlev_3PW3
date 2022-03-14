@@ -11,3 +11,5 @@
 - The issue with eyes is fixed. TV is filled with Alarm table view cells.
 
 - CollectionView is filled with alarms, that can be scrolled horizontally.
+
+- There is a plus Button in navigation bar, that opens Alarm creation Menu. This menu uses AlarmWorker class to store alarms and pass them to all three screens. Change in one alarm on one screen changes this alarm everywhere. Pressing an alarm allows to change it in editing menu.

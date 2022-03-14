@@ -20,17 +20,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         // Adding random alarms into model.
-        AlarmWorker().addRandomAlarms(count: 20, completion: nil)
+        AlarmWorker().addRandomAlarms(count: 10, completion: nil)
                 
         // Creating tabBarController with view controllers and putting it inside navigationController.
-        let tabBarController = UITabBarController()
+        let tabBarController = AlarmTabBarAssembly().assemble()
         
-        let viewControllers = [StackViewAssembly().assemble(),
-                               TableViewAssembly().assemble(),
-                               CollectionViewAssembly().assemble()]
+        let viewControllers = [StackAssembly().assemble(),
+                               TableAssembly().assemble(),
+                               CollectionAssembly().assemble()]
         tabBarController.setViewControllers(viewControllers, animated: false)
                 
         let navigationController = UINavigationController(rootViewController: tabBarController)
+        navigationController.view.backgroundColor = .white
         window.rootViewController = navigationController
                 
         // Configuring titles and tabbar images.
