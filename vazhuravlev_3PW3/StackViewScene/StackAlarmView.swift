@@ -41,6 +41,12 @@ class StackAlarmView: UIView {
         self.onSwitch.pinRight(to: self.trailingAnchor, 20)
         self.onSwitch.addTarget(self, action: #selector(self.sendSwitchAction), for: .valueChanged)
         
+        let separator = UIView()
+        separator.backgroundColor = .darkGray
+        self.addSubview(separator)
+        separator.pin(to: self, .left, .right, .bottom)
+        separator.setHeight(to: 1)
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.sendTapAction))
         self.addGestureRecognizer(tapRecognizer)
     }

@@ -10,6 +10,7 @@ import Foundation
 protocol EditAlarmBusinessLogic: AnyObject {
     func fetchAlarm()                           // Fetches given alarm by id.
     func editAlarm(hours: Int, minutes: Int)    // Edits given alarm by id.
+    func removeAlarm()                          // Rememoves given alarm.
 }
 
 protocol EditAlarmDataStore: AnyObject {
@@ -28,6 +29,12 @@ extension EditAlarmInteractor: EditAlarmBusinessLogic {
     func editAlarm(hours: Int, minutes: Int) {
         if let alarmId = self.alarmId {
             self.alarmWorker.change(id: alarmId, hours: hours, minutes: minutes)
+        }
+    }
+    
+    func removeAlarm() {
+        if let alarmId = self.alarmId {
+            self.alarmWorker.remove(id: alarmId, completion: nil)
         }
     }
     

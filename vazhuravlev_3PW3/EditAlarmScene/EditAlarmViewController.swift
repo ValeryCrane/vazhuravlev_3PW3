@@ -18,6 +18,7 @@ class EditAlarmViewController: UIViewController {
     public var router: EditAlarmRoutingLogic!
     
     private var timePicker: UIPickerView?
+    private var deleteButton: UIButton?
     
     // MARK: - ViewController's life cycle
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class EditAlarmViewController: UIViewController {
         self.title = "Edit"
         setupTimePicker()
         setupNavigationBar()
+        setupDeleteButton()
     }
     
     // MARK: - Setup functions
@@ -48,6 +50,18 @@ class EditAlarmViewController: UIViewController {
             UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.addAlarm))
     }
     
+    private func setupDeleteButton() {
+        let deleteButton = UIButton()
+        deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.setTitleColor(.systemRed, for: .normal)
+        deleteButton.titleLabel?.font = .systemFont(ofSize: 24, weight: .light)
+        deleteButton.addTarget(self, action: #selector(removeAlarm), for: .touchUpInside)
+        view.addSubview(deleteButton)
+        deleteButton.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+        deleteButton.pin(to: view, .left, .right)
+        self.deleteButton = deleteButton
+    }
+    
     // Asks interactor to add alarm amd closes view.
     @objc private func addAlarm() {
         if let timePicker = self.timePicker {
@@ -57,6 +71,12 @@ class EditAlarmViewController: UIViewController {
             )
             router.closeView()
         }
+    }
+    
+    // Asks interactor to remove alarm amd closes view.
+    @objc private func removeAlarm() {
+        interactor.removeAlarm()
+        router.closeView()
     }
     
     // Closes edit view.

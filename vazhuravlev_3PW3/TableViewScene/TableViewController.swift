@@ -38,6 +38,7 @@ class TableViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .white
+        table.separatorStyle = .none
         self.view.addSubview(table)
         table.pinTop(to: self.view.safeAreaLayoutGuide.topAnchor)
         table.pinBottom(to: self.view.safeAreaLayoutGuide.bottomAnchor)

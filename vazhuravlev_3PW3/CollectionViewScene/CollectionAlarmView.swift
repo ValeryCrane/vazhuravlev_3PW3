@@ -32,6 +32,12 @@ class CollectionAlarmView: UICollectionViewCell {
         self.onSwitch.pinTop(to: self.contentView.topAnchor, 20)
         self.onSwitch.pinRight(to: self.contentView.trailingAnchor, 20)
         self.onSwitch.addTarget(self, action: #selector(self.sendSwitchAction), for: .valueChanged)
+        
+        let separator = UIView()
+        separator.backgroundColor = .darkGray
+        self.contentView.addSubview(separator)
+        separator.pin(to: contentView, .left, .right, .bottom)
+        separator.setHeight(to: 1)
     }
     
     // Loads data from alarmModel into view elements.
