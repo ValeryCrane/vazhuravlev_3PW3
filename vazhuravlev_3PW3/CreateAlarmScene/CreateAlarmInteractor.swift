@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol CreateAlarmBusinessLogic: AnyObject {
-    func addAlarm(hours: Int, minutes: Int)    // Adds given alarm via worker.
+    func addAlarm(hours: Int, minutes: Int, sound: Int)    // Adds given alarm via worker.
 }
 
 class CreateAlarmInteractor {
@@ -19,8 +19,11 @@ class CreateAlarmInteractor {
 
 // MARK: - CreateAlarmBusinessLogic implementation
 extension CreateAlarmInteractor: CreateAlarmBusinessLogic {
-    func addAlarm(hours: Int, minutes: Int) {
-        let alarm = AlarmModel(hours: hours, minutes: minutes)
+    func addAlarm(hours: Int, minutes: Int, sound: Int) {
+        var alarm = AlarmModel(hours: hours, minutes: minutes, sound: AlarmSound.student)
+        if let alarmSound = AlarmSound(rawValue: sound) {
+            alarm.changeSound(sound: alarmSound)
+        }
         alarmWorker.add(alarm: alarm, completion: nil)
     }
 }

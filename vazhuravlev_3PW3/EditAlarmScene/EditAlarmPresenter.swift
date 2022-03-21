@@ -23,7 +23,8 @@ extension EditAlarmPresenter: EditAlarmPresentationLogic {
     func present(alarm: AlarmModel) {
         view.displayAlarm(
             hours: alarm.getHours(),
-            minutes: alarm.getMinutes()
+            minutes: alarm.getMinutes(),
+            sound: alarm.getSound()
         )
     }
 }

@@ -22,6 +22,13 @@
 		48268F0327DF934000D2158A /* TableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F0227DF934000D2158A /* TableRouter.swift */; };
 		48268F1027DFA76E00D2158A /* TextAlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */; };
 		48268F1427DFAD1100D2158A /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48268F1327DFAD1100D2158A /* StackRouter.swift */; };
+		4860211F27E89A5E0053CD1E /* AlarmCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4860211D27E89A5E0053CD1E /* AlarmCoreData.xcdatamodeld */; };
+		4860212B27E8A2D90053CD1E /* Student.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4860212A27E8A2D90053CD1E /* Student.wav */; };
+		4860213027E8A7660053CD1E /* GovoritMoskva.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4860212E27E8A7660053CD1E /* GovoritMoskva.wav */; };
+		4860213127E8A7660053CD1E /* ArmyanRadio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4860212F27E8A7660053CD1E /* ArmyanRadio.wav */; };
+		4860213527E8A7B10053CD1E /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860213327E8A7B10053CD1E /* Alarm+CoreDataClass.swift */; };
+		4860213627E8A7B10053CD1E /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860213427E8A7B10053CD1E /* Alarm+CoreDataProperties.swift */; };
+		4860213A27E8A9780053CD1E /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860213927E8A9780053CD1E /* AlarmSound.swift */; };
 		48740A5927DE8CC400EF2BC3 /* TableAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5827DE8CC400EF2BC3 /* TableAlarmView.swift */; };
 		48740A5C27DE97EE00EF2BC3 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5B27DE97EE00EF2BC3 /* TableInteractor.swift */; };
 		48740A5F27DE97FB00EF2BC3 /* TablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48740A5E27DE97FB00EF2BC3 /* TablePresenter.swift */; };
@@ -63,6 +70,13 @@
 		48268F0227DF934000D2158A /* TableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouter.swift; sourceTree = "<group>"; };
 		48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlarmModel.swift; sourceTree = "<group>"; };
 		48268F1327DFAD1100D2158A /* StackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
+		4860211E27E89A5E0053CD1E /* AlarmCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlarmCoreData.xcdatamodel; sourceTree = "<group>"; };
+		4860212A27E8A2D90053CD1E /* Student.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Student.wav; sourceTree = "<group>"; };
+		4860212E27E8A7660053CD1E /* GovoritMoskva.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GovoritMoskva.wav; sourceTree = "<group>"; };
+		4860212F27E8A7660053CD1E /* ArmyanRadio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ArmyanRadio.wav; sourceTree = "<group>"; };
+		4860213327E8A7B10053CD1E /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4860213427E8A7B10053CD1E /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4860213927E8A9780053CD1E /* AlarmSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSound.swift; sourceTree = "<group>"; };
 		48740A5827DE8CC400EF2BC3 /* TableAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAlarmView.swift; sourceTree = "<group>"; };
 		48740A5B27DE97EE00EF2BC3 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
 		48740A5E27DE97FB00EF2BC3 /* TablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenter.swift; sourceTree = "<group>"; };
@@ -135,6 +149,16 @@
 			path = EditAlarmScene;
 			sourceTree = "<group>";
 		};
+		4860212D27E8A74C0053CD1E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4860211D27E89A5E0053CD1E /* AlarmCoreData.xcdatamodeld */,
+				4860213327E8A7B10053CD1E /* Alarm+CoreDataClass.swift */,
+				4860213427E8A7B10053CD1E /* Alarm+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		48740A6927DEB6A700EF2BC3 /* CollectionViewScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +183,7 @@
 		4896414627DE0E4200BAFFE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4860213927E8A9780053CD1E /* AlarmSound.swift */,
 				4896412A27DDE6BD00BAFFE7 /* AlarmModel.swift */,
 				48268F0F27DFA76E00D2158A /* TextAlarmModel.swift */,
 			);
@@ -211,9 +236,13 @@
 		48C4E19427DDDBBD009CC733 /* vazhuravlev_3PW3 */ = {
 			isa = PBXGroup;
 			children = (
+				4860212A27E8A2D90053CD1E /* Student.wav */,
+				4860212F27E8A7660053CD1E /* ArmyanRadio.wav */,
+				4860212E27E8A7660053CD1E /* GovoritMoskva.wav */,
 				48C4E1B927DDDF3C009CC733 /* UIView_Pin.swift */,
 				48C4E19527DDDBBD009CC733 /* AppDelegate.swift */,
 				48C4E19727DDDBBD009CC733 /* SceneDelegate.swift */,
+				4860212D27E8A74C0053CD1E /* CoreData */,
 				4896414627DE0E4200BAFFE7 /* Models */,
 				4896412627DDE67D00BAFFE7 /* Workers */,
 				48268EE127DF577B00D2158A /* TabBarScene */,
@@ -286,6 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4860213027E8A7660053CD1E /* GovoritMoskva.wav in Resources */,
+				4860213127E8A7660053CD1E /* ArmyanRadio.wav in Resources */,
+				4860212B27E8A2D90053CD1E /* Student.wav in Resources */,
 				48C4E1A227DDDBBE009CC733 /* LaunchScreen.storyboard in Resources */,
 				48C4E19F27DDDBBE009CC733 /* Assets.xcassets in Resources */,
 			);
@@ -298,13 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4860211F27E89A5E0053CD1E /* AlarmCoreData.xcdatamodeld in Sources */,
 				48C4E1BA27DDDF3C009CC733 /* UIView_Pin.swift in Sources */,
 				48268EF327DF6B3700D2158A /* EditAlarmViewController.swift in Sources */,
 				48740A5927DE8CC400EF2BC3 /* TableAlarmView.swift in Sources */,
 				48740A7127DEB6FA00EF2BC3 /* CollectionAssembly.swift in Sources */,
+				4860213527E8A7B10053CD1E /* Alarm+CoreDataClass.swift in Sources */,
 				48740A6227DE981700EF2BC3 /* TableAssembly.swift in Sources */,
 				48268EFC27DF6B6F00D2158A /* EditAlarmAssembly.swift in Sources */,
 				48268EDB27DF3D7D00D2158A /* CreateAlarmRouter.swift in Sources */,
+				4860213A27E8A9780053CD1E /* AlarmSound.swift in Sources */,
 				48C4E1AD27DDDCEF009CC733 /* StackViewController.swift in Sources */,
 				48C4E19627DDDBBD009CC733 /* AppDelegate.swift in Sources */,
 				48268EFF27DF901600D2158A /* EditAlarmPresenter.swift in Sources */,
@@ -319,6 +354,7 @@
 				48268EE327DF579400D2158A /* AlarmTabBarViewController.swift in Sources */,
 				48C4E1B027DDDCF8009CC733 /* TableViewController.swift in Sources */,
 				48268F1427DFAD1100D2158A /* StackRouter.swift in Sources */,
+				4860213627E8A7B10053CD1E /* Alarm+CoreDataProperties.swift in Sources */,
 				4896412B27DDE6BD00BAFFE7 /* AlarmModel.swift in Sources */,
 				48FAF29727DFCF4A005D4938 /* CollectionRouter.swift in Sources */,
 				48740A6727DEA88D00EF2BC3 /* CollectionAlarmView.swift in Sources */,
@@ -527,6 +563,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4860211D27E89A5E0053CD1E /* AlarmCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4860211E27E89A5E0053CD1E /* AlarmCoreData.xcdatamodel */,
+			);
+			currentVersion = 4860211E27E89A5E0053CD1E /* AlarmCoreData.xcdatamodel */;
+			path = AlarmCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48C4E18A27DDDBBD009CC733 /* Project object */;
 }

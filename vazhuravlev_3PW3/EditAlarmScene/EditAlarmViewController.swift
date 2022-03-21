@@ -10,10 +10,12 @@ import UIKit
 
 
 protocol EditAlarmDisplayLogic: AnyObject {
-    func displayAlarm(hours: Int, minutes: Int) // Displays fetched alarm in picker view.
+    func displayAlarm(hours: Int, minutes: Int, sound: AlarmSound)     // Displays fetched alarm in picker view.
 }
 
 class EditAlarmViewController: UIViewController {
+    private static let sounds = ["Студент", "Радио", "Москва"]
+    
     public var interactor: EditAlarmBusinessLogic!
     public var router: EditAlarmRoutingLogic!
     
@@ -44,8 +46,6 @@ class EditAlarmViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.leftBarButtonItem =
-            UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(self.closeView))
         navigationItem.rightBarButtonItem =
             UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.addAlarm))
     }
@@ -67,7 +67,8 @@ class EditAlarmViewController: UIViewController {
         if let timePicker = self.timePicker {
             interactor.editAlarm(
                 hours: timePicker.selectedRow(inComponent: 0),
-                minutes: timePicker.selectedRow(inComponent: 1)
+                minutes: timePicker.selectedRow(inComponent: 1),
+                sound: timePicker.selectedRow(inComponent: 2)
             )
             router.closeView()
         }
@@ -89,33 +90,45 @@ class EditAlarmViewController: UIViewController {
 // MARK: - UIPickerViewDelegate & DataSource implementation
 extension EditAlarmViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (row < 10) {
-            return "0" + String(row)
+        if component == 0 || component == 1 {
+            if row < 10 {
+                return "0" + String(row)
+            }
+            return String(row)
         }
-        return String(row)
+        return Self.sounds[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 70
+        if component == 0 || component == 1 {
+            return 70
+        }
+        return 150
     }
 }
 
 extension EditAlarmViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        2
+        3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        component == 0 ? 24 : 60
+        switch component {
+        case 0: return 24
+        case 1: return 60
+        case 2: return Self.sounds.count
+        default: return 0
+        }
     }
 }
 
 
 // MARK: - EditAlarmDisplayLogic implementation
 extension EditAlarmViewController: EditAlarmDisplayLogic {
-    func displayAlarm(hours: Int, minutes: Int) {
+    func displayAlarm(hours: Int, minutes: Int, sound: AlarmSound) {
         guard hours >= 0, hours < 24, minutes >= 0, minutes < 60 else { return }
         self.timePicker?.selectRow(hours, inComponent: 0, animated: true)
         self.timePicker?.selectRow(minutes, inComponent: 1, animated: true)
+        self.timePicker?.selectRow(sound.rawValue, inComponent: 2, animated: true)
     }
 }

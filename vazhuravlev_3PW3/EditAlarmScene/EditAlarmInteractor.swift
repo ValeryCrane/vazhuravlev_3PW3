@@ -8,9 +8,9 @@
 import Foundation
 
 protocol EditAlarmBusinessLogic: AnyObject {
-    func fetchAlarm()                           // Fetches given alarm by id.
-    func editAlarm(hours: Int, minutes: Int)    // Edits given alarm by id.
-    func removeAlarm()                          // Rememoves given alarm.
+    func fetchAlarm()                                       // Fetches given alarm by id.
+    func editAlarm(hours: Int, minutes: Int, sound: Int)    // Edits given alarm by id.
+    func removeAlarm()                                      // Rememoves given alarm.
 }
 
 protocol EditAlarmDataStore: AnyObject {
@@ -26,9 +26,12 @@ class EditAlarmInteractor: EditAlarmDataStore {
 
 // MARK: - EditAlarmBusinessLogic implementation
 extension EditAlarmInteractor: EditAlarmBusinessLogic {
-    func editAlarm(hours: Int, minutes: Int) {
+    func editAlarm(hours: Int, minutes: Int, sound: Int) {
         if let alarmId = self.alarmId {
             self.alarmWorker.change(id: alarmId, hours: hours, minutes: minutes)
+            if let alarmSound = AlarmSound(rawValue: sound) {
+                self.alarmWorker.change(id: alarmId, sound: alarmSound)
+            }
         }
     }
     

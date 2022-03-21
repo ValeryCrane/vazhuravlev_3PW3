@@ -16,4 +16,4 @@
 
 - Using Clean architecture.
 
-
+- Alarms work, we can choose sound. Alarms are saved in CoreData
